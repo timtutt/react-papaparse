@@ -1,0 +1,1 @@
+export { readString } from './readString'
