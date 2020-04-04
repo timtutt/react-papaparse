@@ -1,5 +1,5 @@
 import PapaParse from 'papaparse'
 
-export function jsonToCSV (json, options = {}) {
+export function jsonToCSV (json: any, options = {}) {
   return PapaParse.unparse(json, options)
 }

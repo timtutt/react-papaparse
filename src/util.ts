@@ -1,11 +1,11 @@
-export default function getSize(size) {
+export default function getSize(size: number) {
   const sizeKb = 1024
   const sizeMb = sizeKb * sizeKb
   const sizeGb = sizeMb * sizeKb
   const sizeTerra = sizeGb * sizeKb
 
   if (size < sizeMb) {
-    const calculatedSizeMb = (size / sizeKb).toFixed(0)
+    const calculatedSizeMb = Number((size / sizeKb).toFixed(0))
     if (calculatedSizeMb <= 0) return  size + ' B'
     return calculatedSizeMb + ' KB'
   } else if (size < sizeGb) {
