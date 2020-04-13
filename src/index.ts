@@ -1,8 +1,9 @@
 import PapaParse from 'papaparse'
 
 export { readString } from './readString'
-export { readRemoteFile } from './readRemoteFile'
 export { jsonToCSV } from './jsonToCSV'
+export { readRemoteFile } from './readRemoteFile'
+export { default as CSVReader } from './CSVReader'
 
 export const BAD_DELIMITERS = PapaParse.BAD_DELIMETERS
 export const RECORD_SEP = PapaParse.RECORD_SEP
