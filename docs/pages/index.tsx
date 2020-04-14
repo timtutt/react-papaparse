@@ -185,7 +185,9 @@ export default class Index extends React.Component<Props, State> {
   render() {
     return (
       <>
-        <CSVReader />
+        <CSVReader>
+          <span>Hi</span>
+        </CSVReader>
       </>
     )
   }
