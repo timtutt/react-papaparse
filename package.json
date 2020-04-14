@@ -57,7 +57,8 @@
     "deploy": "gh-pages -d docs/build"
   },
   "peerDependencies": {
-    "@types/react": "^16.9.32"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -69,8 +70,12 @@
     "@rollup/plugin-typescript": "^4.0.0",
     "@types/papaparse": "^5.0.3",
     "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rollup": "^2.3.2",
     "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-terser": "^5.3.0",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"

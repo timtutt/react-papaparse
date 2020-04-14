@@ -152,7 +152,7 @@
   
 // }
 
-// export default class CSVReader extends React.Component<Props, State> {
+// export default class Index extends React.Component<Props, State> {
 //   handleClick = () => {
 //     readRemoteFile('https://react-papaparse.js.org/static/csv/normal.csv', {
 //       complete: (results) => {
@@ -171,6 +171,7 @@
 // ======================================================
 
 import React from 'react'
+import { CSVReader } from 'react-papaparse'
 
 interface Props {
   
@@ -180,11 +181,11 @@ interface State {
   
 }
 
-export default class CSVReader extends React.Component<Props, State> {
+export default class Index extends React.Component<Props, State> {
   render() {
     return (
       <>
-        Hello
+        <CSVReader />
       </>
     )
   }
