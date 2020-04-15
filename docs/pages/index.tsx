@@ -53,15 +53,7 @@
 // import React from 'react'
 // import { readString } from 'react-papaparse'
 
-// interface Props {
-  
-// }
-
-// interface State {
-  
-// }
-
-// export default class CSVReader extends React.Component<Props, State> {
+// export default class CSVReader extends React.Component {
 //   handleClick = () => {
 //     const str = `Column 1,Column 2,Column 3,Column 4
 // 1-1,1-2,1-3,1-4
@@ -88,15 +80,7 @@
 // import React from 'react'
 // import { jsonToCSV } from 'react-papaparse'
 
-// interface Props {
-  
-// }
-
-// interface State {
-  
-// }
-
-// export default class CSVReader extends React.Component<Props, State> {
+// export default class CSVReader extends React.Component {
 //   handleClick = () => {
 //     const jsonData = `[
 //   {
@@ -144,15 +128,7 @@
 // import React from 'react'
 // import { readRemoteFile } from 'react-papaparse'
 
-// interface Props {
-  
-// }
-
-// interface State {
-  
-// }
-
-// export default class Index extends React.Component<Props, State> {
+// export default class Index extends React.Component {
 //   handleClick = () => {
 //     readRemoteFile('https://react-papaparse.js.org/static/csv/normal.csv', {
 //       complete: (results) => {
@@ -170,23 +146,225 @@
 
 // ======================================================
 
+// import React from 'react'
+// import { CSVReader } from 'react-papaparse'
+
+// const buttonRef: any = React.createRef<HTMLDivElement>()
+
+// export default class Index extends React.Component {
+//   handleOpenDialog = (e) => {
+//     // Note that the ref is set async, so it might be null at some point 
+//     if (buttonRef.current) {
+//       buttonRef.current.open(e)
+//     }
+//   }
+  
+//   handleOnFileLoad = (data) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   handleOnDrop = (data) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   handleOnError = (err, file, inputElem, reason) => {
+//     console.log(err)
+//   }
+
+//   handleOnRemoveFile = (data) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   handleRemoveFile = (e) => {
+//     // Note that the ref is set async, so it might be null at some point
+//     if (buttonRef.current) {
+//       buttonRef.current.removeFile(e)
+//     }
+//   }
+
+//   render() {
+//     return (
+//       <CSVReader
+//         ref={buttonRef}
+//         onFileLoad={this.handleOnDrop}
+//         onError={this.handleOnError}
+//         noClick
+//         noDrag
+//         onRemoveFile={this.handleOnRemoveFile}
+//       >
+//         {({ file }) => (
+//           <aside
+//             style={{
+//               display: 'flex',
+//               flexDirection: 'row',
+//               marginBottom: 10
+//             }}
+//           >
+//             <button
+//               type='button'
+//               onClick={this.handleOpenDialog}
+//               style={{
+//                 borderRadius: 0,
+//                 marginLeft: 0,
+//                 marginRight: 0,
+//                 width: '40%',
+//                 paddingLeft: 0,
+//                 paddingRight: 0
+//               }}
+//             >
+//               Browe file
+//             </button>
+//             <div
+//               style={{
+//                 borderWidth: 1,
+//                 borderStyle: 'solid',
+//                 borderColor: '#ccc',
+//                 height: 45,
+//                 lineHeight: 2.5,
+//                 marginTop: 5,
+//                 marginBottom: 5,
+//                 paddingLeft: 13,
+//                 paddingTop: 3,
+//                 width: '60%'
+//               }}
+//             >
+//               {file && file.name}
+//             </div>
+//             <button
+//               style={{
+//                 borderRadius: 0,
+//                 marginLeft: 0,
+//                 marginRight: 0,
+//                 paddingLeft: 20,
+//                 paddingRight: 20
+//               }}
+//               onClick={this.handleRemoveFile}
+//             >
+//               Remove
+//             </button>
+//           </aside>
+//         )}
+//       </CSVReader>
+//     )
+//   }
+// }
+
+// ======================================================
+
+// import React from 'react'
+// import { CSVReader } from 'react-papaparse'
+
+// export default class Index extends React.Component {
+//   handleOnDrop = (data: any) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   handleOnError = (err, file, inputElem, reason) => {
+//     console.log(err)
+//   }
+
+//   handleOnRemoveFile = (data: any) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <CSVReader
+//           onDrop={this.handleOnDrop}
+//           onError={this.handleOnError}
+//           addRemoveButton
+//           onRemoveFile={this.handleOnRemoveFile}
+//         >
+//           <span>Drop CSV file here or click to upload.</span>
+//         </CSVReader>
+//       </>
+//     )
+//   }
+// }
+
+// ======================================================
+
+// import React from 'react'
+// import { CSVReader } from 'react-papaparse'
+
+// export default class Index extends React.Component {
+//   handleOnDrop = (data: any) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   handleOnError = (err, file, inputElem, reason) => {
+//     console.log(err)
+//   }
+
+//   handleOnRemoveFile = (data: any) => {
+//     console.log('---------------------------')
+//     console.log(data)
+//     console.log('---------------------------')
+//   }
+
+//   render() {
+//     return (
+//       <>
+//         <CSVReader
+//           onDrop={this.handleOnDrop}
+//           onError={this.handleOnError}
+//           noClick
+//           addRemoveButton
+//           onRemoveFile={this.handleOnRemoveFile}
+//         >
+//           <span>Drop CSV file here to upload.</span>
+//         </CSVReader>
+//       </>
+//     )
+//   }
+// }
+
+// ======================================================
+
 import React from 'react'
 import { CSVReader } from 'react-papaparse'
 
-interface Props {
-  
-}
+export default class Index extends React.Component {
+  handleOnDrop = (data: any) => {
+    console.log('---------------------------')
+    console.log(data)
+    console.log('---------------------------')
+  }
 
-interface State {
-  
-}
+  handleOnError = (err, file, inputElem, reason) => {
+    console.log(err)
+  }
 
-export default class Index extends React.Component<Props, State> {
+  handleOnRemoveFile = (data: any) => {
+    console.log('---------------------------')
+    console.log(data)
+    console.log('---------------------------')
+  }
+
   render() {
     return (
       <>
-        <CSVReader>
-          <span>Hi</span>
+        <CSVReader
+          onDrop={this.handleOnDrop}
+          onError={this.handleOnError}
+          noDrag
+          addRemoveButton
+          onRemoveFile={this.handleOnRemoveFile}
+        >
+          <span>Click to upload.</span>
         </CSVReader>
       </>
     )

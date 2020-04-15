@@ -82,7 +82,7 @@ interface Props {
   children: any,
   onDrop?: (data: any) => void
   onFileLoad?: (data: any) => void
-  onError?: () => void
+  onError?: (err: any, file: any, inputElem: any, reason: any) => void
   config?: any,
   style?: any,
   noClick?: boolean
