@@ -161,7 +161,7 @@ export default class CSVReader extends React.Component<Props, State> {
 
   handleDrop = (e: any) => {
     let files: any = {}
-    let isCanceled: boolean = false
+    let isCanceled = false
 
     if (e.files === undefined) {
       const dt = e.dataTransfer
@@ -180,7 +180,7 @@ export default class CSVReader extends React.Component<Props, State> {
 
   handleFiles = () => {
     this.setState({ progressBar: 0 })
-    let files = null
+    let files: any = null
     files = [...this.state.files]
     files.forEach(this.uploadFile)
   }
@@ -207,7 +207,7 @@ export default class CSVReader extends React.Component<Props, State> {
     if (config.complete) delete config.complete
 
     const size = file.size
-    const data: any[] | never[] = []
+    const data: any = []
     let percent = 0
 
     if (onDrop || onFileLoad) {
@@ -241,7 +241,7 @@ export default class CSVReader extends React.Component<Props, State> {
       PapaParse.parse(e.target.result, options)
     }
 
-    reader.onloadend = e => {
+    reader.onloadend = () => {
       clearTimeout(this.state.timeout)
       this.setState({ timeout: setTimeout(() => { this.disableProgressBar() }, 2000) })
     }
